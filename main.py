@@ -32,6 +32,11 @@ async def ru(text: str):
     text = translator_en_ru(text)[0]['translation_text']
     return text
 
+@app.post('/en')
+async def en(text: str):
+    text = summarizer(text)[0]['summary_text']
+    return text
+
 
 if __name__ == '__main__':
     import uvicorn
